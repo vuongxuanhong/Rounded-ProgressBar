@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.vuongxuanhong.roundedprogressbar.RoundedProgressBar
+        android:id="@+id/progressbar"
+        android:background="#ccc"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:rpb_barColor="#0535DE"
+        app:rpb_barEndColor="#2186FF"
+        app:rpb_barWidth="16dp"
+        app:rpb_fillColor="#11216a"
+        app:rpb_innerContourColor="#141b4d"
+        app:rpb_innerContourWidth="8dp"
+        app:rpb_maxValue="100"
+        app:rpb_outerContourColor="#141b4d"
+        app:rpb_outerContourWidth="24dp"
+        app:rpb_rimColor="#11216a"
+        app:rpb_rimWidth="32dp"
+        app:rpb_text="12"
+        app:rpb_textColor="#fff"
+        app:rpb_textFont="@font/bebasneue_regular"
+        app:rpb_textSize="100sp"
+        app:rpb_value="9"
+        />
+
+</android.support.constraint.ConstraintLayout>

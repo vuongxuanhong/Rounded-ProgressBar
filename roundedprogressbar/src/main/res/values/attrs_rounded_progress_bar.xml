@@ -1,0 +1,26 @@
+<resources>
+    <declare-styleable name="RoundedProgressBar">
+        <attr name="rpb_text" format="string"/>
+        <attr name="rpb_textColor" format="color"/>
+        <attr name="rpb_textSize" format="dimension"/>
+        <attr name="rpb_textFont" format="reference"/>
+
+        <attr name="rpb_rimWidth" format="dimension"/>
+        <attr name="rpb_rimColor" format="color"/>
+
+        <attr name="rpb_fillColor" format="color"/>
+
+        <attr name="rpb_barWidth" format="dimension"/>
+        <attr name="rpb_barColor" format="color"/>
+        <attr name="rpb_barEndColor" format="color"/>
+
+        <attr name="rpb_innerContourWidth" format="dimension"/>
+        <attr name="rpb_innerContourColor" format="color"/>
+
+        <attr name="rpb_outerContourWidth" format="dimension"/>
+        <attr name="rpb_outerContourColor" format="color"/>
+
+        <attr name="rpb_value" format="float"/>
+        <attr name="rpb_maxValue" format="float"/>
+    </declare-styleable>
+</resources>
