@@ -4,7 +4,6 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.*
 import android.os.Build
-import android.support.v4.content.res.ResourcesCompat
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.util.Log
@@ -35,14 +34,9 @@ class RoundedProgressBar : View {
     private var fillOval: RectF? = null
 
     private var textPaint: TextPaint? = null
-    private var textWidth: Float = 0f
-    private var textHeight: Float = 0f
+    //    private var textWidth: Float = 0f
+//    private var textHeight: Float = 0f
     private var textBound: RectF? = null
-    private var _text: String? = "0"
-        set(value) {
-            field = value
-            invalidateTextPaintAndMeasurements()
-        }
     private var _textColor: Int = Color.BLACK
         set(value) {
             field = value
@@ -126,11 +120,6 @@ class RoundedProgressBar : View {
             invalidateBar()
         }
 
-    var text: String?
-        get() = _text
-        set(value) {
-            _text = value
-        }
     var textColor: Int
         get() = _textColor
         set(value) {
@@ -243,7 +232,6 @@ class RoundedProgressBar : View {
         val a = context.obtainStyledAttributes(
                 attrs, R.styleable.RoundedProgressBar, defStyle, 0)
 
-        _text = a.getString(R.styleable.RoundedProgressBar_rpb_text)
         _textColor = a.getColor(R.styleable.RoundedProgressBar_rpb_textColor, textColor)
         _textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, a.getDimension(R.styleable.RoundedProgressBar_rpb_textSize, textSize), resources.displayMetrics)
         _textFont = a.getResourceId(R.styleable.RoundedProgressBar_rpb_textFont, 0)
@@ -326,8 +314,8 @@ class RoundedProgressBar : View {
             textSize = this@RoundedProgressBar.textSize
             color = textColor
             typeface = Typefaces.get(context, textFont)
-            textWidth = measureText(text)
-            textHeight = fontMetrics.bottom
+//            textWidth = measureText(text)
+//            textHeight = fontMetrics.bottom
         }
     }
 
@@ -407,14 +395,10 @@ class RoundedProgressBar : View {
     }
 
     private fun invalidateTextPaintAndMeasurements() {
-        if (text == null) return
-
         textPaint?.apply {
             textSize = textSize
             color = textColor
             typeface = Typefaces.get(context, textFont)
-            textWidth = measureText(text)
-            textHeight = fontMetrics.bottom
         }
     }
 
@@ -480,9 +464,7 @@ class RoundedProgressBar : View {
         }
 
         textPaint?.apply {
-            if (text != null && text!!.isNotEmpty()) {
-                canvas.drawText(text, textBound!!.centerX(), textBound!!.centerY() - ((textPaint!!.descent() + textPaint!!.ascent()) / 2), textPaint)
-            }
+            canvas.drawText(value.toInt().toString(), textBound!!.centerX(), textBound!!.centerY() - ((textPaint!!.descent() + textPaint!!.ascent()) / 2), textPaint)
         }
 
     }

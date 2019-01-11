@@ -1,6 +1,5 @@
 <resources>
     <declare-styleable name="RoundedProgressBar">
-        <attr name="rpb_text" format="string"/>
         <attr name="rpb_textColor" format="color"/>
         <attr name="rpb_textSize" format="dimension"/>
         <attr name="rpb_textFont" format="reference"/>
